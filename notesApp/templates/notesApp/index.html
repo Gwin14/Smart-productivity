@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends "global/base.html" %}
+
 <body>
-    <h1>FUNCIONANDO</h1>
+    {% block content %}
+    <a href="" class="note-link">
+        <h3 class="note-link-title">Nota</h3>
+        <p class="note-link-date">14/10/2004</p>
+    </a>
+    <a href="" class="note-link">
+        <h3 class="note-link-title">Nota</h3>
+        <p class="note-link-date">14/10/2004</p>
+    </a>
+    <a href="" class="note-link">
+        <h3 class="note-link-title">Nota</h3>
+        <p class="note-link-date">14/10/2004</p>
+    </a>
+    {% endblock content %}
 </body>
 </html>

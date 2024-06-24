@@ -1,0 +1,65 @@
+:root {
+  --backgroundColor: #f7f8e8;
+  --mainTextColor: #0f0f0f;
+  --detailColor1: #e2ddf5;
+  --detailColor2: #efebff;
+
+  --mainFont: -apple-system, sans-serif;
+
+  --smallTitleWeight: bold;
+  --smallTitleSize: 1.6em;
+
+  --smallPadding: 10px;
+  --mediumPadding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--mainFont);
+}
+
+body {
+  background-color: var(--backgroundColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--mediumPadding);
+  border-bottom: 3px solid var(--detailColor1);
+  background-color: var(--detailColor2);
+}
+
+.header-link {
+  font-weight: var(--smallTitleWeight);
+  font-size: var(--smallTitleSize);
+  padding-left: var(--mediumPadding);
+  padding-right: var(--mediumPadding);
+  color: var(--mainTextColor);
+}
+
+.sidebar {
+  width: 30%;
+  height: 800px;
+  border-right: 3px solid var(--detailColor1);
+  padding: var(--mediumPadding);
+}
+
+.note-link {
+  width: 100%;
+  background-color: black;
+}
+
+.note-link:hover {
+  background-color: var(--detailColor2);
+}
