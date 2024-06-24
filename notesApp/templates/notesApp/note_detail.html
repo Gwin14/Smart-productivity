@@ -1,0 +1,16 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+
+{% for note in notes %}
+{% include "notesApp/partials/_sideNotes.html" %}
+
+{% endfor %}
+
+{% endblock content %}
+
+{% block main %}
+
+<h1>{{ note.title }}</h1>
+
+{% endblock main %}

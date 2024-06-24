@@ -19,13 +19,13 @@ def index(request):
 def note_detail(request, note_id):
     note = get_object_or_404(Note, pk=note_id)
 
+    notes = Note.objects.all()
+
     context = {
-        'notes': note,
-        'title': 'Notes App',
+        'notes': notes,
+        'note': note,
     }
 
     return render(request,
                   'notesApp/note_detail.html',
-                  context={
-                      'note': note,
-                  })
+                  context=context)

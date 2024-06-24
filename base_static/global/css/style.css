@@ -56,7 +56,7 @@ hr {
 
 .sidebar {
   width: 25%;
-  height: 800px;
+  height: 90vh;
   border-right: 2px solid var(--detailColor1);
   padding: var(--mediumPadding);
 }

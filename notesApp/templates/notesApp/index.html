@@ -1,18 +1,11 @@
 {% extends "global/base.html" %}
 
-<body>
+
     {% block content %}
 
     {% for note in notes %}
-    <div class="note-link">
-        <a href="" >
-            <h3 class="note-link-title">{{note.title}}</h3>
-            <p class="note-link-date">{{ note.date_created }}</p>
-        </a>
-    </div>
+    {% include "notesApp/partials/_sideNotes.html" %}
     
-    <hr>
-
     {% endfor %}
 
     {% endblock content %}
@@ -22,5 +15,3 @@
     <h1 class="index-title">Notas de Fulano</h1>
 
     {% endblock main %}
-</body>
-</html>

@@ -1,0 +1,8 @@
+<div class="note-link">
+    <a href="{% url "note_detail" note.id %}" >
+        <h3 class="note-link-title">{{note.title}}</h3>
+        <p class="note-link-date">{{ note.date_created }}</p>
+    </a>
+</div>
+
+<hr>
