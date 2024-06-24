@@ -8,6 +8,7 @@
 
   --smallTitleWeight: bold;
   --smallTitleSize: 1.6em;
+  --largeTitleSize: 4em;
 
   --smallPadding: 10px;
   --mediumPadding: 20px;
@@ -32,6 +33,11 @@ main {
   display: flex;
 }
 
+hr {
+  width: 90%;
+  margin: auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -49,17 +55,32 @@ main {
 }
 
 .sidebar {
-  width: 30%;
+  width: 25%;
   height: 800px;
-  border-right: 3px solid var(--detailColor1);
+  border-right: 2px solid var(--detailColor1);
   padding: var(--mediumPadding);
 }
 
 .note-link {
   width: 100%;
-  background-color: black;
+  padding: var(--smallPadding);
+  border-radius: 10px;
 }
 
 .note-link:hover {
-  background-color: var(--detailColor2);
+  background-color: var(--detailColor1);
+}
+
+.note-link-title,
+.note-link-date {
+  color: var(--mainTextColor);
+}
+
+.index-title{
+  font-size: var(--largeTitleSize);
+  color:var(--detailColor1);
+
+  position: absolute;
+
+  transform: translate(50%, 50%);
 }

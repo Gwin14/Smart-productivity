@@ -1,7 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from notesApp.models import Note
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'notesApp/index.html')
+
+    notes = Note.objects.all()
+
+    context = {
+        'notes': notes,
+        'title': 'Notes App',
+    }
+
+    return render(request, 'notesApp/index.html', context=context)
+
+
+def note_detail(request, note_id):
+    note = get_object_or_404(Note, pk=note_id)
+
+    context = {
+        'notes': note,
+        'title': 'Notes App',
+    }
+
+    return render(request,
+                  'notesApp/note_detail.html',
+                  context={
+                      'note': note,
+                  })
