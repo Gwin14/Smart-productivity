@@ -3,15 +3,13 @@
 
     {% block content %}
 
+    {% include "notesApp/partials/_searchBar.html" %}
+
     {% for note in notes %}
     {% include "notesApp/partials/_sideNotes.html" %}
-    
     {% endfor %}
-
     {% endblock content %}
 
     {% block main %}
-    
     <h1 class="index-title">Notas de Fulano</h1>
-
     {% endblock main %}

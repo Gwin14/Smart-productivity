@@ -1,7 +1,7 @@
 :root {
   --backgroundColor: #fffae5;
   --mainTextColor: #0f0f0f;
-  --detailColor1: #ffe44e;
+  --detailColor1: #fcec93;
   --detailColor2: #fff1b8;
 
   --mainFont: -apple-system, sans-serif;
@@ -14,6 +14,8 @@
   --smallPadding: 10px;
   --mediumPadding: 20px;
   --largePadding: 50px;
+
+  --show: show 0.5s;
 }
 
 * {
@@ -74,6 +76,27 @@ hr {
   padding: var(--mediumPadding);
 }
 
+.search-bar {
+  margin-bottom: var(--smallPadding);
+  height: 35px;
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid var(--detailColor1);
+  font-family: var(--mainFont);
+  font-weight: var(--smallTitleWeight);
+  padding: var(--smallPadding);
+}
+
+.create_button{
+  color: var(--mainTextColor);
+  font-weight: var(--smallTitleWeight);
+  font-size: 2.2em;
+}
+
+.create_button:hover {
+  background-color: var(--detailColor1);
+}
+
 .note-link {
   width: 100%;
   padding: var(--smallPadding);
@@ -92,6 +115,7 @@ hr {
 .index-title {
   font-size: var(--largeTitleSize);
   color: var(--detailColor1);
+  animation: var(--show);
 }
 
 .note-detail {
@@ -102,6 +126,7 @@ hr {
   min-height: 95%;
   border-radius: 30px;
   overflow-x: hidden;
+  animation: var(--show);
 }
 
 .note-title {
@@ -109,6 +134,7 @@ hr {
   color: var(--mainTextColor);
   border-bottom: 2px solid var(--mainTextColor);
   margin-bottom: 40px;
+  padding-bottom: var(--smallPadding);
 }
 
 .note-text {
@@ -135,7 +161,6 @@ hr {
   overflow: hidden;
   height: 200px;
   width: 140%;
-  background-color: red;
   margin-bottom: 20px;
   margin-left: -200px;
   margin-top: -50px;
@@ -145,4 +170,15 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ANIMATIONS */
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

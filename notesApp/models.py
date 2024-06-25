@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Note(models.Model):
-    title = models.CharField(max_length=20, blank=True, null=True)
-    content = models.TextField(blank=True, null=True)
+    title = models.CharField(max_length=40,default='Título')
+    content = models.TextField(blank=True, null=True,default='Conteúdo')
     date_created = models.DateTimeField(default=timezone.now)
     tags = TaggableManager()
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')

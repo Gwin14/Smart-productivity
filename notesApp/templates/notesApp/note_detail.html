@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include "notesApp/partials/_searchBar.html" %}
+
 {% for note in notes %}
 {% include "notesApp/partials/_sideNotes.html" %}
 {% endfor %}
