@@ -172,6 +172,7 @@ hr {
   object-fit: cover;
 }
 
+
 /* ANIMATIONS */
 
 @keyframes show {
@@ -181,4 +182,78 @@ hr {
   100% {
     opacity: 1;
   }
+}
+
+/* ----------- */
+
+
+/* global/static/css/styles.css */
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff8e1; /* Fundo quase branco */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-content {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group > label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group > input,
+.form-group > textarea,
+.form-group > div {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group > input[type="file"] {
+  padding: 0;
+}
+
+.form-group > input:focus,
+.form-group > textarea:focus,
+.form-group > div:focus {
+  border-color: #ffcc00; /* Cor de foco */
+}
+
+.form-group > textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  width: 50%;
+  height: 100px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ffcc00; /* Cor do botão */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #e6b800; /* Cor de hover */
 }

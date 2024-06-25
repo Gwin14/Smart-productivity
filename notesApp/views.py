@@ -50,16 +50,15 @@ def search(request):
 
 
 def create_note(request):
-
     notes = Note.objects.all().order_by('-date_created')
 
     if request.method == 'POST':
 
-        form = NoteForm(request.POST)
+        form = NoteForm(request.POST, request.FILES)
 
         context = {
             'notes': notes,
-            'form': form
+            'form': form,
         }
 
         if form.is_valid():
