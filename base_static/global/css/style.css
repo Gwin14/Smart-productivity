@@ -1,17 +1,19 @@
 :root {
-  --backgroundColor: #f7f8e8;
+  --backgroundColor: #fbfdda;
   --mainTextColor: #0f0f0f;
-  --detailColor1: #e2ddf5;
-  --detailColor2: #efebff;
+  --detailColor1: #d8d78b;
+  --detailColor2: #fffebc;
 
   --mainFont: -apple-system, sans-serif;
 
   --smallTitleWeight: bold;
+  --smallTextSize: 1.3em;
   --smallTitleSize: 1.6em;
   --largeTitleSize: 4em;
 
   --smallPadding: 10px;
   --mediumPadding: 20px;
+  --largePadding: 50px;
 }
 
 * {
@@ -31,11 +33,22 @@ a {
 
 main {
   display: flex;
+  overflow: hidden;
 }
 
 hr {
   width: 90%;
   margin: auto;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  padding: var(--mediumPadding);
+  overflow: scroll;
 }
 
 .header {
@@ -76,11 +89,56 @@ hr {
   color: var(--mainTextColor);
 }
 
-.index-title{
+.index-title {
   font-size: var(--largeTitleSize);
-  color:var(--detailColor1);
+  color: var(--detailColor1);
+}
 
-  position: absolute;
+.note-detail {
+  margin-top: var(--largePadding);
+  background-color: var(--detailColor2);
+  padding: var(--largePadding);
+  width: 99%;
+  min-height: 95%;
+  border-radius: 30px;
+  overflow-x: hidden;
+}
 
-  transform: translate(50%, 50%);
+.note-title {
+  font-size: var(--largeTitleSize);
+  color: var(--mainTextColor);
+  border-bottom: 2px solid var(--mainTextColor);
+  margin-bottom: 40px;
+}
+
+.note-text {
+  font-size: var(--smallTextSize);
+  color: var(--mainTextColor);
+}
+
+.note-tags {
+  list-style: none;
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+  width: auto;
+}
+
+.tag {
+  background-color: var(--detailColor1);
+  padding: var(--smallPadding);
+  border-radius: 40px;
+  margin: 5px;
+}
+
+.note-image {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 200px;
+  width: 140%;
+  background-color: red;
+  margin-bottom: 20px;
+  margin-left: -50px;
+  margin-top: -50px;
 }

@@ -4,13 +4,29 @@
 
 {% for note in notes %}
 {% include "notesApp/partials/_sideNotes.html" %}
-
 {% endfor %}
 
 {% endblock content %}
 
-{% block main %}
 
-<h1>{{ note.title }}</h1>
+{% block main %}
+<section class="note-detail">
+
+    {% if note.picture %}
+    <section class="note-image">
+        <img  src="{{ note.picture.url }}" alt="capa">
+    </section>
+    {% endif %}
+    
+    <h1 class="note-title">{{ note.title }}</h1>
+ 
+    <p class="note-text">{{ note.content }}</p>
+    
+    <ul class="note-tags">
+        {% for tag in note.tags.all %}
+            <li class="tag">{{ tag.name }}</li>
+        {% endfor %}
+    </ul>
+</section>
 
 {% endblock main %}
