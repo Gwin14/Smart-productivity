@@ -1,8 +1,8 @@
 :root {
-  --backgroundColor: #fbfdda;
+  --backgroundColor: #fffae5;
   --mainTextColor: #0f0f0f;
-  --detailColor1: #d8d78b;
-  --detailColor2: #fffebc;
+  --detailColor1: #ffe44e;
+  --detailColor2: #fff1b8;
 
   --mainFont: -apple-system, sans-serif;
 
@@ -132,13 +132,17 @@ hr {
 }
 
 .note-image {
-  display: flex;
-  align-items: center;
   overflow: hidden;
   height: 200px;
   width: 140%;
   background-color: red;
   margin-bottom: 20px;
-  margin-left: -50px;
+  margin-left: -200px;
   margin-top: -50px;
+}
+
+.note-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

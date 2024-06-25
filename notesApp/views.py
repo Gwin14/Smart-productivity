@@ -6,7 +6,7 @@ from notesApp.models import Note
 
 def index(request):
 
-    notes = Note.objects.all()
+    notes = Note.objects.all().order_by('-date_created')
 
     context = {
         'notes': notes,
@@ -19,7 +19,7 @@ def index(request):
 def note_detail(request, note_id):
     note = get_object_or_404(Note, pk=note_id)
 
-    notes = Note.objects.all()
+    notes = Note.objects.all().order_by('-date_created')
 
     context = {
         'notes': notes,
