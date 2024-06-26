@@ -102,4 +102,4 @@ def chatbot_view(request):
         response = chat.send_message(question)
         return JsonResponse({'response': response.text})
 
-    return render(request, 'chatbot.html')
+    return render(request, 'notesApp/chatbot.html')

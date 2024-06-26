@@ -1,78 +1,74 @@
 /* styles.css */
 
-/* Reset some basic styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+#chat-title {
+  margin: 30px;
 }
 
-/* Container for the chatbot */
 #chatbox {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Individual chat messages */
 #chatbox div {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-    word-wrap: break-word;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
 }
 
 #chatbox div strong {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 #chatbox div:nth-child(even) {
-    background-color: #e0f7fa; /* Light cyan for bot responses */
-    border: 1px solid #b2ebf2;
+  background-color: #e0f7fa; /* Light cyan for bot responses */
+  border: 1px solid var(--detailColor1);
 }
 
 #chatbox div:nth-child(odd) {
-    background-color: #fff9c4; /* Light yellow for user messages */
-    border: 1px solid #fff59d;
+  background-color: #fff9c4; /* Light yellow for user messages */
+  border: 1px solid #fff59d;
 }
 
 /* Form styling */
 #chat-form {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background-color: #fff;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 60px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #chat-form input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 #chat-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0288d1; /* Blue for the button */
-    color: white;
-    cursor: pointer;
+  height: auto;
+  width: 20%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--detailColor1); /* Blue for the button */
+  color: var(--mainFontColor);
+  cursor: pointer;
 }
 
 #chat-form button:hover {
-    background-color: #0277bd;
+  background-color: var(--detailColor1);
 }
