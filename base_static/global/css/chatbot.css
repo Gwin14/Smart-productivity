@@ -2,6 +2,7 @@
 
 #chat-title {
   margin: 30px;
+  color: var(--mainTextColor);
 }
 
 #chatbox {
@@ -28,13 +29,13 @@
 }
 
 #chatbox div:nth-child(even) {
-  background-color: #e0f7fa; /* Light cyan for bot responses */
+  background-color: var(--mainTextColor); /* Light cyan for bot responses */
   border: 1px solid var(--detailColor1);
 }
 
 #chatbox div:nth-child(odd) {
-  background-color: #fff9c4; /* Light yellow for user messages */
-  border: 1px solid #fff59d;
+  background-color: var(--detailColor2); /* Light yellow for user messages */
+  border: 1px solid var(--detailColor1);
 }
 
 /* Form styling */
@@ -45,7 +46,7 @@
   display: flex;
   padding: 10px;
   border-top: 1px solid #ccc;
-  background-color: #fff;
+  background-color: var(--mainTextColor);
   border-radius: 0 0 10px 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
