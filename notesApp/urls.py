@@ -7,4 +7,8 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     path('notes/create/', views.create_note, name='create_note'),
+
+    # IA DO GOOGLE CHATBOT
+
+    path('chatbot/', views.chatbot_view, name='chatbot'),
 ]

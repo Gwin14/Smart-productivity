@@ -1,0 +1,54 @@
+<!-- templates/chatbot.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static "global/css/chatbot.css" %}">
+</head>
+<body>
+    <h1>Chat with the Bot</h1>
+    <div id="chatbox">
+        <!-- Chat messages will appear here -->
+    </div>
+    <form id="chat-form">
+        <input type="text" id="question" placeholder="Type your question here...">
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#chat-form').on('submit', function(event) {
+                event.preventDefault();
+                
+                let question = $('#question').val();
+                if (question.trim() === '') {
+                    return;
+                }
+
+                $('#chatbox').append('<div><strong>You:</strong> ' + question + '</div>');
+
+                $.ajax({
+                    url: '{% url "chatbot" %}',
+                    method: 'POST',
+                    data: {
+                        question: question,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    success: function(data) {
+                        $('#chatbox').append('<div><strong>Bot:</strong> ' + data.response + '</div>');
+                        $('#question').val('');
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

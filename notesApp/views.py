@@ -3,6 +3,11 @@ from notesApp.forms import NoteForm
 from notesApp.models import Note
 from django.db.models import Q
 
+from django.http import JsonResponse
+import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+
 # Create your views here.
 
 
@@ -73,3 +78,28 @@ def create_note(request):
     }
 
     return render(request, 'notesApp/create_note.html', context=context)
+
+
+# IA DO GOOGLE CHATBOT
+
+load_dotenv()
+
+API_KEY = os.getenv('GEMINI_API_KEY')
+
+genai.configure(api_key=API_KEY)
+
+model = genai.GenerativeModel('gemini-pro')
+chat = model.start_chat(history=[])
+
+
+def chatbot_view(request):
+    if request.method == 'POST':
+        question = request.POST.get('question')
+
+        if question.strip() == '':
+            return JsonResponse({'error': 'Empty question'}, status=400)
+
+        response = chat.send_message(question)
+        return JsonResponse({'response': response.text})
+
+    return render(request, 'chatbot.html')
