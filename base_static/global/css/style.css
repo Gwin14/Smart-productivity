@@ -1,14 +1,17 @@
 :root {
-  --backgroundColor: #0f0c0c;
-  --mainTextColor: #dddddd;
-  --detailColor1: #502626;
-  --detailColor2: #f3073a3b;
+  --backgroundColor: #151419;
+  --mainTextColor: #fbfbfb;
+  --detailColorDark: #1b1b1e;
+  --detailColorLight: #262626;
+  --accentColor: #f56e0f;
+  --extraColor: #878787;
 
   --mainFont: -apple-system, sans-serif;
 
   --smallTitleWeight: bold;
   --smallTextSize: 1.3em;
   --smallTitleSize: 1.6em;
+  --mediumTitleSize: 1.8em;
   --largeTitleSize: 4em;
 
   --smallPadding: 10px;
@@ -50,15 +53,18 @@ hr {
   width: 100%;
   height: 90vh;
   padding: var(--mediumPadding);
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .header {
+  max-height: 70px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: var(--mediumPadding);
-  border-bottom: 3px solid var(--detailColor1);
-  background-color: var(--detailColor2);
+  border-bottom: 3px solid var(--detailColorDark);
+  background-color: var(--detailColorLight);
 }
 
 .header-link {
@@ -67,34 +73,60 @@ hr {
   padding-left: var(--mediumPadding);
   padding-right: var(--mediumPadding);
   color: var(--mainTextColor);
+
+  transition-duration: 0.5s;
+}
+
+.header-link:hover {
+  font-size: var(--mediumTitleSize);
+  text-shadow: -5px 5px 10px #f56f0fb7;
+}
+
+.header-link:hover span {
+  color: var(--accentColor);
 }
 
 .sidebar {
   width: 25%;
   height: 90vh;
-  border-right: 2px solid var(--detailColor1);
+  border-right: 2px solid var(--detailColorDark);
   padding: var(--mediumPadding);
+  overflow-y: auto;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .search-bar {
+  height: 100%;
   margin-bottom: var(--smallPadding);
   height: 35px;
   width: 90%;
   border-radius: 10px;
-  border: 2px solid var(--detailColor1);
+  border: 2px solid var(--detailColorDark);
   font-family: var(--mainFont);
   font-weight: var(--smallTitleWeight);
   padding: var(--smallPadding);
 }
 
+.search-bar:focus {
+  border: 2px solid var(--accentColor);
+  outline: none;
+}
+
 .create_button {
+  height: 100%;
+  margin-bottom: var(--smallPadding);
   color: var(--mainTextColor);
   font-weight: var(--smallTitleWeight);
   font-size: 2.2em;
 }
 
 .create_button:hover {
-  background-color: var(--detailColor1);
+  color: var(--accentColor);
 }
 
 .note-link {
@@ -104,7 +136,7 @@ hr {
 }
 
 .note-link:hover {
-  background-color: var(--detailColor1);
+  background-color: var(--detailColorDark);
 }
 
 .note-link-title,
@@ -114,13 +146,13 @@ hr {
 
 .index-title {
   font-size: var(--largeTitleSize);
-  color: var(--detailColor1);
+  color: var(--detailColorDark);
   animation: var(--show);
 }
 
 .note-detail {
   margin-top: var(--largePadding);
-  background-color: var(--detailColor2);
+  background-color: var(--detailColorLight);
   padding: var(--largePadding);
   width: 99%;
   min-height: 95%;
@@ -151,7 +183,7 @@ hr {
 }
 
 .tag {
-  background-color: var(--detailColor1);
+  background-color: var(--detailColorDark);
   padding: var(--smallPadding);
   border-radius: 40px;
   margin: 5px;
@@ -183,16 +215,16 @@ hr {
   }
 }
 
-/* ----------- */
+/* FORM */
 
 .form {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--backgroundColor);
-  border: 1px solid var(--detailColor1);
+  background-color: var(--detailColorLight);
+  border: 1px solid var(--detailColorDark);
   border-radius: 8px;
-  box-shadow: 0 0 10px var(--detailColor1);
+  box-shadow: 0 0 10px var(--detailColorDark);
 }
 
 .form-content {
@@ -217,9 +249,8 @@ hr {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid var(--mainTextColor);
+  border: 1px solid var(--extraColor);
   border-radius: 4px;
-  background-color: var(--mainTextColor);
 
   transition: border-color 0.3s;
 }
@@ -232,7 +263,8 @@ hr {
 .form-group > input:focus,
 .form-group > textarea:focus,
 .form-group > div:focus {
-  border-color: var(--detailColor1); /* Cor de foco */
+  border-color: var(--accentColor);
+  outline-color: var(--accentColor);
 }
 
 .form-group > textarea {
@@ -245,13 +277,37 @@ button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
   color: var(--mainTextColor);
-  background-color: var(--detailColor1);
+  background-color: var(--accentColor);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 button[type="submit"]:hover {
-  background-color: var(--detailColor1);
+  box-shadow: 0 0 10px var(--accentColor);
+}
+
+/* ROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilizando a parte interna da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: var(
+    --detailColorDark
+  ); /* Cor de fundo da trilha da barra de rolagem */
+}
+
+/* Estilizando o polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: var(--detailColorLight); /* Cor do polegar */
+  border-radius: 6px; /* Arredondamento das bordas do polegar */
+}
+
+/* Estilizando o polegar da barra de rolagem ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor do polegar ao passar o mouse */
 }

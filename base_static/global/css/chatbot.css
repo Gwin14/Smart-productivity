@@ -1,22 +1,32 @@
 /* styles.css */
 
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+}
+
 #chat-title {
   margin: 30px;
   color: var(--mainTextColor);
+  font-size: 3em;
 }
 
 #chatbox {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Individual chat messages */
 #chatbox div {
+  color: var(--mainTextColor);
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
@@ -29,26 +39,25 @@
 }
 
 #chatbox div:nth-child(even) {
-  background-color: var(--mainTextColor); /* Light cyan for bot responses */
-  border: 1px solid var(--detailColor1);
+  background-color: var(--detailColorLight); /* bot responses */
+  border: 1px solid var(--detailColorDark);
 }
 
 #chatbox div:nth-child(odd) {
-  background-color: var(--detailColor2); /* Light yellow for user messages */
-  border: 1px solid var(--detailColor1);
+  background-color: var(--detailColorDark); /* user messages */
+  border: 1px solid var(--detailColorLight);
 }
 
 /* Form styling */
 #chat-form {
   height: 60px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   padding: 10px;
-  border-top: 1px solid #ccc;
-  background-color: var(--mainTextColor);
+  background-color: var(--backgroundColor);
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #0000001a;
 }
 
 #chat-form input[type="text"] {
@@ -65,11 +74,11 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: var(--detailColor1); /* Blue for the button */
+  background-color: var(--accentColor); /* Blue for the button */
   color: var(--mainFontColor);
   cursor: pointer;
 }
 
 #chat-form button:hover {
-  background-color: var(--detailColor1);
+  box-shadow: 0 0 10px var(--accentColor);
 }
