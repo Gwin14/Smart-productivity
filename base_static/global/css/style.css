@@ -38,6 +38,7 @@ a {
 
 main {
   display: flex;
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -151,11 +152,13 @@ hr {
 }
 
 .note-detail {
+  white-space: pre-wrap; /* Preserva quebras de linha */
+
   margin-top: var(--largePadding);
   background-color: var(--detailColorLight);
   padding: var(--largePadding);
   width: 99%;
-  min-height: 95%;
+  align-self: self-start;
   border-radius: 30px;
   overflow-x: hidden;
   animation: var(--show);
@@ -165,11 +168,15 @@ hr {
   font-size: var(--largeTitleSize);
   color: var(--mainTextColor);
   border-bottom: 2px solid var(--mainTextColor);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding-bottom: var(--smallPadding);
 }
 
-.note-text {
+.note-detail > ol,
+.note-detail > p,
+.note-detail > h3,
+.note-detail > h4,
+.note-detail > ul {
   font-size: var(--smallTextSize);
   color: var(--mainTextColor);
 }
@@ -183,19 +190,20 @@ hr {
 }
 
 .tag {
-  background-color: var(--detailColorDark);
+  background-color: var(--extraColor);
   padding: var(--smallPadding);
   border-radius: 40px;
   margin: 5px;
 }
 
 .note-image {
+  align-self: self-start;
+
   overflow: hidden;
-  height: 200px;
+  height: 300px;
   width: 140%;
-  margin-bottom: 20px;
   margin-left: -200px;
-  margin-top: -50px;
+  margin-top: -200px;
 }
 
 .note-image > img {

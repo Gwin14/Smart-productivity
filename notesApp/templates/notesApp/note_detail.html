@@ -22,7 +22,7 @@
     
     <h1 class="note-title">{{ note.title }}</h1>
  
-    <p class="note-text">{{ note.content }}</p>
+    <p class="note-text">{{ note.content_html|safe }}</p>
     
     <ul class="note-tags">
         {% for tag in note.tags.all %}

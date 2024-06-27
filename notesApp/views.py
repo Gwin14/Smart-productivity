@@ -1,3 +1,5 @@
+import markdown
+
 from django.shortcuts import get_object_or_404, redirect, render
 from notesApp.forms import NoteForm
 from notesApp.models import Note
@@ -27,6 +29,8 @@ def note_detail(request, note_id):
     note = get_object_or_404(Note, pk=note_id)
 
     notes = Note.objects.all().order_by('-date_created')
+
+    note.content_html = markdown.markdown(note.content)
 
     context = {
         'notes': notes,
@@ -67,8 +71,10 @@ def create_note(request):
         }
 
         if form.is_valid():
-            form.save()
-            return redirect('index')
+            note = form.save(commit=False)
+            note.owner = request.user
+            note.save()
+            return redirect('note_detail', note_id=note.pk)
 
         return render(request, 'notesApp/create_note.html', context=context)
 
@@ -100,6 +106,7 @@ def chatbot_view(request):
             return JsonResponse({'error': 'Empty question'}, status=400)
 
         response = chat.send_message(question)
-        return JsonResponse({'response': response.text})
+        html_response = markdown.markdown(response.text)
+        return JsonResponse({'response': html_response})
 
     return render(request, 'notesApp/chatbot.html')
