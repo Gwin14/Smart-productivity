@@ -221,6 +221,54 @@ li {
   object-fit: cover;
 }
 
+.auth-group {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  padding: 70px;
+  border: 2px solid var(--mainTextColor);
+  border-radius: 20px;
+}
+
+.auth-title {
+  color: var(--mainTextColor);
+  font-size: var(--largeTitleSize);
+  margin-bottom: var(--mediumPadding);
+}
+
+.auth-container > nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.auth-login,
+.auth-register {
+  text-align: center;
+  padding: 20px;
+  color: var(--mainTextColor);
+  border-radius: 10px;
+  width: 40%;
+}
+
+.auth-login {
+  background-color: var(--accentColor);
+}
+
+.auth-register {
+  border: 1px solid var(--accentColor);
+}
+
+.auth-login:hover,
+.auth-register:hover {
+  box-shadow: 0 0 10px var(--accentColor);
+}
+
 /* ANIMATIONS */
 
 @keyframes show {
@@ -330,7 +378,6 @@ button[type="submit"]:hover {
 }
 
 /* ERRORS */
-
 
 .errorlist {
   margin: 10px;

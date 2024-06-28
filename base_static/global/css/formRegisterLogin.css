@@ -111,3 +111,13 @@ button[type="submit"] {
 button[type="submit"]:hover {
   box-shadow: 0 0 10px var(--accentColor);
 }
+
+/* ERRORS */
+
+.errorlist {
+  margin: 10px;
+  color: var(--accentColor);
+}
+.errorlist.nonfield {
+  color: inherit;
+}

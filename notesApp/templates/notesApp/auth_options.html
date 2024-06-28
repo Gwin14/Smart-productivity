@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static "global/css/style.css" %}">
+  </head>
+
+  <section class="auth-group">
+    <section class="auth-container">
+      <h1 class="auth-title">Smart Notes</h1>
+      <nav>
+          <a href="{% url "login" %}" class="auth-login">Entrar</a>
+          <a href="{% url "register" %}" class="auth-register">Registre-se</a>
+      </nav>
+    </section>
+  </section>
+</html>
