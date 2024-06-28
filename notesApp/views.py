@@ -1,7 +1,7 @@
 import markdown
 
 from django.shortcuts import get_object_or_404, redirect, render
-from notesApp.forms import NoteForm
+from notesApp.forms import NoteForm, RegisterForm
 from notesApp.models import Note
 from django.db.models import Q
 
@@ -86,7 +86,24 @@ def create_note(request):
     return render(request, 'notesApp/create_note.html', context=context)
 
 
+def register(request):
+    form = RegisterForm()
+
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'notesApp/register.html', context=context)
+
 # IA DO GOOGLE CHATBOT
+
 
 load_dotenv()
 

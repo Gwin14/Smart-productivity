@@ -47,6 +47,12 @@ hr {
   margin: auto;
 }
 
+ol,
+ul,
+li {
+  padding-left: 20px;
+}
+
 .main {
   display: flex;
   justify-content: center;
@@ -59,6 +65,9 @@ hr {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
   max-height: 70px;
   display: flex;
   align-items: center;
@@ -280,8 +289,8 @@ hr {
 }
 
 button[type="submit"] {
-  width: 50%;
-  height: 100px;
+  width: 40%;
+  height: 50px;
   padding: 10px 20px;
   font-size: 16px;
   color: var(--mainTextColor);
@@ -318,4 +327,15 @@ button[type="submit"]:hover {
 /* Estilizando o polegar da barra de rolagem ao passar o mouse */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Cor do polegar ao passar o mouse */
+}
+
+/* ERRORS */
+
+
+.errorlist {
+  margin: 10px;
+  color: var(--accentColor);
+}
+.errorlist.nonfield {
+  color: inherit;
 }

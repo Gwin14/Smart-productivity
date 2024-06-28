@@ -26,6 +26,7 @@
 
 /* Individual chat messages */
 #chatbox div {
+  animation: var(--show);
   white-space: pre-wrap; /* Preserva quebras de linha */
   color: var(--mainTextColor);
   margin: 10px 0;

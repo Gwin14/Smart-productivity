@@ -6,7 +6,13 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('', views.index, name='index'),
 
+    # NOTES CREATION AND UPDATING
+
     path('notes/create/', views.create_note, name='create_note'),
+
+    # USER AUTHENTICATION
+
+    path('user/create/', views.register, name='register'),
 
     # IA DO GOOGLE CHATBOT
 
