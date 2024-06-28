@@ -17,18 +17,14 @@
       <a href="" class="header-link">+</a>
 
 
-      <div href="{% url "logout" %}" class="header-div">
-
-        {% if user.profile.image.url %}
-
-        <img src="{{ user.profile.image.url }}" alt="Profile" class=" profile-image" />
-
-        {% else %}
-
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fZ_ebLrIR7-37WMGcyj_RO-0TTcZGtUKtg&s" alt="Profile" class="header-link profile-image" />
-
+      <div class="header-div">
+        <a href="{% url "logout" %}">
+          {% if user.profile.image %}
+            <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-image">
+          {% else %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fZ_ebLrIR7-37WMGcyj_RO-0TTcZGtUKtg&s" alt="Profile" class="profile-image">
         {% endif %}
-
+        </a>
       </div>
     </nav>
   </header>
