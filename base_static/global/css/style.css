@@ -97,17 +97,27 @@ li {
   text-shadow: -5px 5px 10px #f56f0fb7;
 }
 
-.profile-image:hover{
-  height: 45px;
-}
-
 .header-link:hover span {
   color: var(--accentColor);
 }
 
-.profile-image {
+.header-div {
+  width: 40px;
   height: 40px;
+  transition-duration: 0.5s;
+}
+
+.profile-image {
   border-radius: 50%;
+
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.header-div:hover {
+  height: 45px;
+  width: 45px;
 }
 
 .sidebar {
