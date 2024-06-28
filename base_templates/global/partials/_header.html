@@ -16,7 +16,11 @@
     <nav class="header-profile">
       <a href="" class="header-link">+</a>
       <a href="{% url "logout" %}" class="header-link">
-        <img src="" alt="Profile" class="profile-link" />
+        {% if user.profile.image.url %}
+        <img src="{{ user.profile.image.url }}" alt="Profile" class="header-link profile-image" />
+        {% else %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fZ_ebLrIR7-37WMGcyj_RO-0TTcZGtUKtg&s" alt="Profile" class="header-link profile-image" />
+        {% endif %}
       </a>
     </nav>
   </header>

@@ -103,7 +103,7 @@ def register(request):
     form = RegisterForm()
 
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = RegisterForm(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()

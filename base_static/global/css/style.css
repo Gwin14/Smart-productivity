@@ -77,6 +77,11 @@ li {
   background-color: var(--detailColorLight);
 }
 
+.header-profile {
+  display: flex;
+  align-items: center;
+}
+
 .header-link {
   font-weight: var(--smallTitleWeight);
   font-size: var(--smallTitleSize);
@@ -92,8 +97,17 @@ li {
   text-shadow: -5px 5px 10px #f56f0fb7;
 }
 
+.profile-image:hover{
+  height: 45px;
+}
+
 .header-link:hover span {
   color: var(--accentColor);
+}
+
+.profile-image {
+  height: 40px;
+  border-radius: 50%;
 }
 
 .sidebar {
@@ -156,7 +170,7 @@ li {
 
 .index-title {
   font-size: var(--largeTitleSize);
-  color: var(--detailColorDark);
+  color: var(--detailColorLight);
   animation: var(--show);
 }
 

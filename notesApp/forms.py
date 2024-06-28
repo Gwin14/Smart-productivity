@@ -21,11 +21,12 @@ class NoteForm(forms.ModelForm):
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(required=True)
     email = forms.CharField(required=True)
+    image = forms.ImageField(required=False)
 
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'username',
-                  'password1', 'password2')
+                  'password1', 'password2', 'image')
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
