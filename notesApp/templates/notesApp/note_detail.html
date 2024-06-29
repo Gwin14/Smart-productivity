@@ -24,11 +24,18 @@
  
     <p class="note-text">{{ note.content_html|safe }}</p>
     
-    <ul class="note-tags">
-        {% for tag in note.tags.all %}
-            <li class="tag">{{ tag.name }}</li>
-        {% endfor %}
-    </ul>
+    <section class="note-info">
+        <ul class="note-tags">
+            {% for tag in note.tags.all %}
+                <li class="tag">{{ tag.name }}</li>
+            {% endfor %}
+        </ul>
+        <form action="{% url "delete_note" note.id %}" method="post">
+            {% csrf_token %}
+            <button class="" type="submit">Apagar</button>
+            <button class="" type="submit">Editar</button>
+        </form>
+    </section>
 </section>
 
 {% endblock main %}

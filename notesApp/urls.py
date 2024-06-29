@@ -10,6 +10,7 @@ urlpatterns = [
     # NOTES CREATION AND UPDATING
 
     path('notes/create/', views.create_note, name='create_note'),
+    path('notes/delete/<int:note_id>/', views.delete_note, name='delete_note'),
 
     # USER AUTHENTICATION
 

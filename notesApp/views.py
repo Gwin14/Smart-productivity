@@ -87,6 +87,7 @@ def create_note(request):
             note = form.save(commit=False)
             note.owner = request.user
             note.save()
+            form.save_m2m()
             return redirect('note_detail', note_id=note.pk)
 
         return render(request, 'notesApp/create_note.html', context=context)
@@ -97,6 +98,13 @@ def create_note(request):
     }
 
     return render(request, 'notesApp/create_note.html', context=context)
+
+
+@login_required(login_url='auth')
+def delete_note(request, note_id):
+    note = Note.objects.get(pk=note_id)
+    note.delete()
+    return redirect('index')
 
 
 def register(request):
