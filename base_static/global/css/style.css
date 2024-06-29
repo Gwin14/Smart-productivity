@@ -245,7 +245,7 @@ li {
   object-fit: cover;
 }
 
-.note-info{
+.note-info {
   margin-top: 30px;
 
   display: flex;
@@ -253,17 +253,24 @@ li {
   justify-content: space-between;
 }
 
-.note-info > form{
-
+.note-options {
   width: 35%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.note-info > form > button {
-  text-align: center;
-  width: 100px;
+.note-options > form {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options-btn {
+  margin: 0px !important;
+  text-align: center !important;
+  width: 100px !important;
 }
 
 .auth-group {

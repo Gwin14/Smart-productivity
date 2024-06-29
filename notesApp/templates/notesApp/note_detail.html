@@ -30,11 +30,13 @@
                 <li class="tag">{{ tag.name }}</li>
             {% endfor %}
         </ul>
-        <form action="{% url "delete_note" note.id %}" method="post">
-            {% csrf_token %}
-            <button class="" type="submit">Apagar</button>
-            <button class="" type="submit">Editar</button>
-        </form>
+        <nav class="note-options">
+            <form action="{% url "delete_note" note.id %}" method="post">
+                {% csrf_token %}
+                <button class="options-btn" type="submit">Apagar</button>
+            </form>
+            <button class="options-btn" type="submit">Editar</button>
+        </nav>
     </section>
 </section>
 
