@@ -1,0 +1,13 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    {% include "notesApp/partials/_searchBar.html" %}
+
+    {% for note in notes %}
+    {% include "notesApp/partials/_sideNotes.html" %}
+    {% endfor %}
+{% endblock content %}
+
+{% block main %}
+{% include "notesApp/partials/_form.html" %}
+{% endblock main %}

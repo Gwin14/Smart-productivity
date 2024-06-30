@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('notes/create/', views.create_note, name='create_note'),
     path('notes/delete/<int:note_id>/', views.delete_note, name='delete_note'),
-    # path('notes/update/<int:note_id>/', views.update_note, name='update_note'),
+    path('notes/update/<int:note_id>/', views.update_note, name='update_note'),
 
     # USER AUTHENTICATION
 

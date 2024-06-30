@@ -271,6 +271,20 @@ li {
   margin: 0px !important;
   text-align: center !important;
   width: 100px !important;
+  background-color: var(--accentColor);
+  border-radius: 5px;
+  height: 50px;
+  text-decoration: none;
+  color: var(--mainTextColor);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.options-btn:hover {
+  box-shadow: 0 0 10px var(--accentColor);
 }
 
 .auth-group {

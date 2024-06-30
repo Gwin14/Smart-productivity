@@ -101,6 +101,27 @@ def create_note(request):
 
 
 @login_required(login_url='auth')
+def update_note(request, note_id):
+
+    note = Note.objects.get(pk=note_id)
+
+    if request.method == 'POST':
+        form = NoteForm(request.POST, request.FILES, instance=note)
+
+        context = {'form': form}
+
+        if form.is_valid():
+            note = form.save()
+            return redirect('note_detail', note_id=note.pk)
+
+        return render(request, 'notesApp/index.html', context=context)
+
+    context = {'form': NoteForm(instance=note)}
+
+    return render(request, 'notesApp/update_note.html', context=context)
+
+
+@login_required(login_url='auth')
 def delete_note(request, note_id):
     note = Note.objects.get(pk=note_id)
     note.delete()

@@ -35,7 +35,7 @@
                 {% csrf_token %}
                 <button class="options-btn" type="submit">Apagar</button>
             </form>
-            <button class="options-btn" type="submit">Editar</button>
+            <a class="options-btn" href="{% url "update_note" note.id %}" type="submit">Editar</a>
         </nav>
     </section>
 </section>
