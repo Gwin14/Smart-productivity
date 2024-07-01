@@ -2,7 +2,7 @@ import markdown
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
-from notesApp.forms import NoteForm, RegisterForm
+from notesApp.forms import NoteForm, RegisterForm, RegisterUpdateForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 from notesApp.models import Note
@@ -167,6 +167,33 @@ def user_login(request):
 def user_logout(request):
     auth.logout(request)
     return redirect('auth')
+
+@login_required(login_url='auth')
+def user_update(request):
+    form = RegisterUpdateForm(instance=request.user)
+
+    if request.method != 'POST':
+        return render(
+            request,
+            'notesApp/user_update.html',
+            {
+                'form': form
+            }
+        )
+
+    form = RegisterUpdateForm(data=request.POST, instance=request.user)
+
+    if not form.is_valid():
+        return render(
+            request,
+            'notesApp/user_update.html',
+            {
+                'form': form
+            }
+        )
+
+    form.save()
+    return redirect('user_update')
 
 
 # IA DO GOOGLE CHATBOT

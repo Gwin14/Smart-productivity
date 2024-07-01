@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SmartNotes</title>
   <link rel="stylesheet" href="{% static "global/css/style.css" %}">
+
 </head>
 <body>
   <header class="header">
@@ -15,17 +16,43 @@
       <a href="{% url "chatbot" %}" class="header-link">Notes<span class="accent-word">IA</span></a>
     </nav>
     <nav class="header-profile">
-      <a href="" class="header-link">+</a>
+      <a href="{% url "create_note" %}" class="header-link">+</a>
       <div class="header-div">
-        <a href="{% url "logout" %}">
+        <a href="{% url "logout" %}" id="profile-link">
           {% if user.profile.image %}
             <img src="{{ user.profile.image.url }}" alt="Profile" class="profile-image">
           {% else %}
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fZ_ebLrIR7-37WMGcyj_RO-0TTcZGtUKtg&s" alt="Profile" class="profile-image">
           {% endif %}
         </a>
+        <!-- Menu que aparece ao clicar na imagem -->
+        <div id="profile-menu">
+          <ul>
+            <li><a href="{% url "logout" %}">Fazer logout</a></li>
+            <li><a href="{% url "user_update" %}">Atualizar perfil</a></li>
+            <li><a href="{% url "create_note" %}">Criar nova nota</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const profileLink = document.getElementById('profile-link');
+      const profileMenu = document.getElementById('profile-menu');
+
+      profileLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Previne a navegação do link
+        profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Fecha o menu ao clicar fora dele
+      document.addEventListener('click', function (event) {
+        if (!profileLink.contains(event.target) && !profileMenu.contains(event.target)) {
+          profileMenu.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

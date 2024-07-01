@@ -18,8 +18,9 @@ urlpatterns = [
     path('user/create/', views.register, name='register'),
     path('user/login/', views.user_login, name='login'),
     path('user/logout/', views.user_logout, name='logout'),
+    path('user/update/', views.user_update, name='user_update'),
 
-    # IA DO GOOGLE CHATBOT
+    # GOOGLE CHATBOT
 
     path('chatbot/', views.chatbot_view, name='chatbot'),
 ]

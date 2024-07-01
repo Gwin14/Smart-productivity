@@ -120,6 +120,36 @@ li {
   width: 45px;
 }
 
+#profile-menu {
+  overflow: hidden;
+
+  display: none;
+  position: absolute;
+  top: 60px; /* Ajuste conforme necessário */
+  right: 10px; /* Ajuste conforme necessário */
+  background-color: var(--detailColorLight);
+  border: 1px solid var(--detailColorDark);
+  z-index: 1000;
+  border-radius: 10px;
+  animation: var(--show);
+}
+#profile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#profile-menu ul li {
+  margin: 0;
+  padding: 15px;
+}
+#profile-menu ul li a {
+  text-decoration: none;
+  color: var(--mainTextColor);
+}
+#profile-menu ul li:hover {
+  background-color: var(--accentColor);
+}
+
 .sidebar {
   width: 25%;
   height: 90vh;
